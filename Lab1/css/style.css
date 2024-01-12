@@ -1,0 +1,48 @@
+header{
+    position:relative;
+    height:200px;
+}
+
+.shopping-mall{
+    position:absolute;
+    bottom:20px;
+    font-variant:small-caps;
+}
+
+.shopping-mall>h1{
+    font-family:Impact;
+    font-size:50px;
+    color:white;
+    letter-spacing: 0.3px;
+    text-shadow:0 0 2px black;
+    padding-bottom:0px;
+    border-bottom:1px dotted gray;
+    margin:0px;
+}
+.shopping-mall>h5{
+	margin-top:5px;
+    letter-spacing: 0.5px;
+}
+
+body {
+    position: relative;
+}
+
+.fixed-top {
+    position: sticky;
+}
+.poly-cart{
+    margin-top: 5px;
+    
+}
+.poly-cart  .aside-top ul{
+  list-style-type: none;
+  margin-left: 30px;
+}
+ .poly-prod .card-body img{
+    height: 150px;
+    width: 70%;
+ }
+ .poly-prod{
+    margin-top: 10px;
+ }

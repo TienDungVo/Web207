@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Lab4/angular.min.js"></script>
+    <style>img{
+        width: 100px;
+        border-radius: 20px;
+        text-align: center;
+    }</style>
+</head>
+
+<body ng-app="myapp">
+
+    <div class="container mt-3" ng-controller="myctrl">
+
+        <table class="table table-bordered table-condensed text-center">
+            <tr>
+                <th>Hình</th>
+                <th>Họ và Tên</th>
+                <th>Ngày sinh</th>
+                <th>Giới tính</th>
+                <th>Điểm</th>
+
+            </tr>
+            <tr>
+                <td><img src="{{students[0].photo}}" alt=""></td>
+                <td>{{students[0].fullname}}</td>
+                <td>{{students[0].birthday}}</td>
+                <td>{{students[0].gender}}</td>
+                <td>{{students[0].mark}}</td>
+            </tr>
+            <tr>
+                <td><img src="{{students[1].photo}}" alt=""></td>
+                <td>{{students[1].fullname}}</td>
+                <td>{{students[1].birthday}}</td>
+                <td>{{students[1].gender}}</td>
+                <td>{{students[1].mark}}</td>
+            </tr>
+            <tr>
+                <td><img src="{{students[2].photo}}" alt=""></td>
+                <td>{{students[2].fullname}}</td>
+                <td>{{students[2].birthday}}</td>
+                <td>{{students[2].gender}}</td>
+                <td>{{students[2].mark}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope) {
+            $scope.students = [{
+                fullname: "Võ Tiến Dũng",
+                birthday: "18-07-2004",
+                gender: "Nam",
+                photo: "images/2407_o13.png",
+                mark: "10.0"
+
+            },
+            {
+                fullname: "Phạm Hải",
+                birthday: "19-07-2004",
+                gender: "Nam",
+                photo: "images/06a656a0124a922942f1c45c0af19b05.jpg",
+                mark: "10.0"
+
+            },
+            {
+                fullname: "Nguyễn Hoàng Trí",
+                birthday: "31-2-2004",
+                gender: "Nam",
+                photo: "images/4057abc393e9738ac54a53c436b01575.jpg",
+                mark: "10.0"
+
+            }
+
+            ]
+        });
+    </script>
+</body>
+
+</html>
