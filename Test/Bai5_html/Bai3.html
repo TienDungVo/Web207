@@ -1,0 +1,55 @@
+<div class="container-fluid" ng-controller="viewCtrl2">
+    <h1>Bài 3 _ Lap 5</h1>
+    <div class="row">
+        <div class="">
+            <form>
+                <div class="form-group">
+                    <label>Họ và Tên</label>
+                    <input ng-model="student2.name" class="form-control" type="text" name="">
+                </div>
+                <div class="form-group">
+                    <label>Ngày Sinh</label>
+                    <input ng-model="student2.birthday" class="form-control" type="text" name="">
+                </div>
+                <div class="form-group">
+                    <label>Điểm</label>
+                    <input ng-model="student2.mark" class="form-control" type="text" name="">
+                </div>
+                <button ng-click="save()" ng-disabled="index != -1" class="btn btn-primary" type="button">Thêm</button>
+                <button ng-click="update()" ng-disabled="index == -1" class="btn btn-primary" type="button">Sửa</button>
+                <button ng-click="delete()" ng-disabled="index == -1" class="btn btn-primary" type="button">Xóa</button>
+                <button ng-click="cancel()" class="btn btn-primary" type="button">Hủy</button>
+                <button ng-click="clear()" class="btn btn-primary" type="button">Mới</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class=" ">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>Tên</td>
+                        <td>Ngày Sinh</td>
+                        <td>Điểm</td>
+                        <td>Xếp Loại</td>
+                        <td>Action</td>
+                    </tr>
+                    <tr ng-repeat="st2 in listStudent2">
+                        <td>{{st2.name}}</td>
+                        <td>{{st2.birthday}}</td>
+                        <td>{{st2.mark}}</td>
+                        <td>
+                            <span ng-if="st2.mark < 5">Yếu(Kém)</span>
+                            <span ng-if="st2.mark >= 5 && < 6.5">Trung Bình</span>
+                            <span ng-if="st2.mark >= 6.5 && < 8">Khá</span>
+                            <span ng-if="st2.mark >= 8 && < 9">Giỏi</span>
+                            <span ng-if="st2.mark > 8">Xuất Sắc</span>
+                        </td>
+                        <td><a ng-click="edit($index)">Edit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

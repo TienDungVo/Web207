@@ -1,0 +1,83 @@
+
+
+<body ng-app="myApp" >
+    <div class="container-fluid">
+        <div class="row" ng-controller="form_Ctrl">
+            <div class="col-sm-6 offset-sm-3">
+                <form>
+                    <div class="form-group">
+                        <label>Họ và Tên</label>
+                        <input ng-model="student.name" class="form-control" type="text" name="">
+                    </div>
+                    <div class="form-group">
+                        <label>Ngày Sinh</label>
+                        <input ng-model="student.birthday" class="form-control" type="text" name="">
+                    </div>
+                    <div class="form-group">
+                        <label>Điểm</label>
+                        <input ng-model="student.mark" class="form-control" type="text" name="">
+                    </div>
+                    <button ng-click="save()" class="btn btn-primary" type="button">Save</button>
+                    <button ng-click="clear()" class="btn btn-primary" type="button">Cancel</button>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row" ng-controller="viewCtrl">
+            <div class="col-sm-6 offset-sm-3 ">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Tên</td>
+                            <td>Ngày Sinh</td>
+                            <td>Điểm</td>
+                            <td>Action</td>
+                        </tr>
+                        <tr ng-repeat="st in listStudent">
+                            <td>{{st.name}}</td>
+                            <td>{{st.birthday}}</td>
+                            <td>{{st.mark}}</td>
+                            <td>edit</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("viewCtrl", function ($scope,$rootScope) {
+
+
+            $rootScope.listStudent = [
+                {
+                    name: "Võ Tiến Dũng",
+                    birthday: "18/07/2004",
+                    mark: 10.0
+                },
+                {
+                    name: "Phạm Hải",
+                    birthday: "19/07/2004",
+                    mark: 10.0
+                },
+                {
+                    name: "Lương Cao Thịnh",
+                    birthday: "18/09/2004",
+                    mark: 10.0
+                },
+            ]
+        });
+        app.controller("form_Ctrl", function($scope,$rootScope) {
+            $rootScope.student = {};
+            $scope.save = function () {
+                $scope.listStudent.push(angular.copy($scope.student))
+            }
+            $scope.clear = function () {
+                $scope.student = {};
+            }
+        });
+
+    </script>
+
+</body>
+
